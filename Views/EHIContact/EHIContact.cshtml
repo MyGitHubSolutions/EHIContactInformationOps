@@ -1,0 +1,47 @@
+﻿@model EHIContactInformation.Context.tblContactInformation
+@{
+    ViewBag.Title = "EHIContact";
+}
+<style>
+    .Error {
+        color:red;
+    }
+</style>
+
+@using (Html.BeginForm("AddEHIContact", "EHIContact", FormMethod.Post))
+{ 
+<div class="=container">
+    <div class="form-group">
+        @Html.HiddenFor(x=>x.ContactID)
+
+        <labl>First Name</labl>
+        @Html.ValidationMessageFor(x=>x.FirstName,"",new {@class="Error"})
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <labl>Last Name</labl>
+        @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "Error" })
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <labl>Email</labl>
+        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "Error" })
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <labl>Status</labl>
+        @Html.ValidationMessageFor(x => x.Status, "", new { @class = "Error" })
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <labl>Phone Number</labl>
+        @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "Error" })
+        @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+    </div>
+</div>
+}

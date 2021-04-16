@@ -1,0 +1,33 @@
+﻿@model List<EHIContactInformation.Context.tblContactInformation>
+@{
+    ViewBag.Title = "ListContact";
+}
+
+<table class="table table-hover">
+    <tr><a href="@Url.Action("EHIContact","")">Back to Add Contact</a></tr>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Phone Number</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.Status</td>
+            <td>@item.PhoneNumber</td>
+            <td>
+                <a href="@Url.Action("EHIContact",new { @item.ContactID, @item.FirstName, @item.LastName, @item.Email, @item.Status, @item.PhoneNumber })"><i class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit Contact"></i></a>
+                &nbsp;
+                <a href="@Url.Action("DeleteContact", new { @item.ContactID })"><i class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete Contact"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+
