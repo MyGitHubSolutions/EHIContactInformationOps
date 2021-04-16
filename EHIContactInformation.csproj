@@ -168,6 +168,7 @@
       <DependentUpon>dbEHIContactModel.edmx</DependentUpon>
       <LastGenOutput>dbEHIContactModel.cs</LastGenOutput>
     </Content>
+    <Content Include="EHIDBScript\DBGenrateScript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
